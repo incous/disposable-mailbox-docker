@@ -37,7 +37,7 @@ services:
     cap_add:
       - NET_ADMIN
     volumes:
-      - ./web/www:/var/www
+      - wwwdata:/var/www
     environment:
       - DOMAIN=${FQDN}
       - EMAIL=${EMAIL}
@@ -55,3 +55,5 @@ services:
 #      - mail
 #    ports:
 #      - "127.0.0.1:8888:8888"
+volumes:
+  wwwdata:
