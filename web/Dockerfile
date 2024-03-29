@@ -22,8 +22,9 @@ EXPOSE 80
 # Copy this repo into place.
 RUN rm -rf /var/www
 RUN mkdir -p /var/www
+COPY ./www/disposal-mailbox /var/www/
 RUN echo "ServerName $fqdn" >> /etc/apache2/apache2.conf
-RUn echo "ServerTokens Prod\nServerSignature Off\nFileETag None" >> /etc/apache2/apache2.conf
+RUN echo "ServerTokens Prod\nServerSignature Off\nFileETag None" >> /etc/apache2/apache2.conf
 
 
 # Update the default apache site with the config we created.
